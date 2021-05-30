@@ -1,12 +1,15 @@
 #include <iostream>
 
-#include "data_structure.hpp"
+#include "../semester-work-huffman-003/include/HuffmanTree.hpp"
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
-  for (int index = 0; index < argc; index++) {
-    cout << index << ": " << argv[index] << endl;
+  itis::HuffmanTree* huffmanTree = new itis::HuffmanTree("aaabbc");
+  cout<<huffmanTree->encode()<<"\n";
+  for (auto ht : huffmanTree->getHuffmanCoding()){
+    cout<<ht.first<<" "<<ht.second<<"\n";
   }
+
   return 0;
 }
